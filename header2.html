@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metamorphosis of a Butterfly</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+
+        }
+
+        body {
+            background-color: #a3d1ff;
+        }
+
+        header.head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background-color: dodgerblue;
+            border-bottom: ridge 10px rgb(30, 132, 255);
+        }
+
+        img.logo {
+            padding: 10px;
+        }
+
+        h1 {
+            color: greenyellow;
+            font-family: 'Pattaya', Arial, Helvetica, sans-serif;
+            font-size: 350%;
+            position: absolute;
+            left: 119px;
+            top: 54px;
+        }
+
+        header.head ul {
+            padding: 20px;
+            list-style-type: none;
+
+        }
+
+        header.head ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        header.head ul li a {
+            background-color: greenyellow;
+            color: dodgerblue;
+            padding: 14px 20px;
+
+            border-radius: 5px;
+        }
+
+        header.head ul li a:hover {
+            font-weight: bolder;
+            background-color: dodgerblue;
+            border: #0b84fd 2px ridge;
+            color: greenyellow;
+        }
+
+        .slide-images {
+            display: none;
+        }
+
+        .content-area {}
+
+        .display-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+        }
+
+        .display-left {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translate(0%, -50%);
+            -ms-transform: translate(-0%, -50%)
+        }
+
+        .display-right {
+            position: absolute;
+            top: 50%;
+            right: 25%;
+            transform: translate(0%, -50%);
+            -ms-transform: translate(0%, -50%)
+        }
+
+        .button {
+            border: none;
+            background-color: rgba(0, 96, 250, 0.164);
+            padding: 15px 20px;
+            user-select: none
+        }
+
+        /* img.logo{
+            position: fixed;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        h1{
+            display: inline;
+            color: greenyellow;
+            font-family: 'Pattaya', Arial, Helvetica, sans-serif;
+            font-size: 350%;
+            position: absolute;
+            left: 92px;
+            top: 31px;
+        }
+
+        header.head ul{
+            position: relative;
+            right: 90px;
+        }
+
+        header.head ul li{
+            display: inline;
+        } */
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <img src="header-butterfly.png" alt="logo" width="131px" height="112px" class="logo">
+        <h1>Metamorphosis of a Butterfly</h1>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- header ends -->
+    <!-- content area starts -->
+    <div class="content-area content display-container">
+        <div class="slider">
+            <a href="#"><img class="slide-images" src="Images/egg.jpg" width="800px"></a>
+            <a href="#"><img class="slide-images" src="Images/caterpillar.jpg" width="800px"></a>
+            <a href="#"><img class="slide-images" src="Images/chrysalis1.jpg" width="800px"></a>
+            <a href="#"><img class="slide-images" src="Images/butterfly.jpg" width="800px"></a>
+
+            <button class="button display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="button display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+    </div>
+    <!-- content-area ends -->
+    <!-- footer starts here -->
+    <footer class="foot">
+        &copy;Mohit's Butterfly Website
+    </footer>
+    <!-- footer ends here -->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("slide-images");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
